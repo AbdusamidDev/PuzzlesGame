@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val files = am.list("img")
             binding.grid.adapter = ImageAdapter(this)
             binding.grid.onItemClickListener =
-                OnItemClickListener { adapterView, view, i, l ->
+                OnItemClickListener { _, _, i, _ ->
                     val intent = Intent(applicationContext, PuzzlesActivity::class.java)
                     intent.putExtra("assetName", files!![i % files.size])
                     startActivity(intent)
